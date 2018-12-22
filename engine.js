@@ -93,7 +93,7 @@ function draw() {
 
 function step() {
   // Program Main Loop
-  context.clearRect(0, 0, canvas.width, canvas.height);
+  context.clearRect(0, 0, c.width, c.height);
   draw();
   player();
   window.requestAnimationFrame(step);
