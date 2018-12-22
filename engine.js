@@ -32,6 +32,11 @@ var playery = 40;
 var gravdir;
 var accelerate = 0;
 
+// Keys detector
+var keys = {};
+window.onkeyup = function(e) { keys[e.keyCode] = false; }
+window.onkeydown = function(e) { keys[e.keyCode] = true; }
+
 function linepoint(x1_,y1_,x2_,y2_,x_,y_) {
   // Projected Length Formula = (AB*AC)/|AB|
   // In this case = ((x1*x2)+(y1*y2))/Math.sqrt((x1*x1)+(y1*y1)) substituting x1,y1 for n1-n2
@@ -50,6 +55,13 @@ function linepoint(x1_,y1_,x2_,y2_,x_,y_) {
   
   x = x2_+(projdis*sin(projangle));
   y = y2_+(projdis*cos(projangle));
+}
+
+function draw() {
+  ctx.beginPath();
+  ctx.moveTo(-500+window.innerWidth,-300+window.innerHeight);
+  ctx.lineTo(500+window.innerWidth,300+window.innerHeight);
+  ctx.stroke();
 }
 
 function step() {
