@@ -29,6 +29,8 @@ var x;
 var y;
 var playerx = 0;
 var playery = 40;
+var playersize = 5;
+var linesize = 5;
 var gravdir;
 var accelerate = 0;
 
@@ -36,6 +38,11 @@ var accelerate = 0;
 var keys = {};
 window.onkeyup = function(e) { keys[e.keyCode] = false; }
 window.onkeydown = function(e) { keys[e.keyCode] = true; }
+
+function dist(x_,y_) {
+  // Pythagorean Theorem
+  return Math.sqrt((x_*x_)+(y_*y_));
+}
 
 function linepoint(x1_,y1_,x2_,y2_,x_,y_) {
   // Projected Length Formula = (AB*AC)/|AB|
@@ -57,6 +64,18 @@ function linepoint(x1_,y1_,x2_,y2_,x_,y_) {
   y = y2_+(projdis*cos(projangle));
 }
 
+function player() {
+  linepoint(-500,-300,500,300,playerx,playery);
+  if (dist(x-playerx,y-playery)<playersize+linesize) {
+    accelerate=0;
+  }
+  if (dist(x-playerx,y-playery)>playersize+linesize) {
+    accelerate+=-1;
+  }
+  playerx+=Math.sin(Math.atan2(x-playerx,y-playery))
+  playery+=Math.cos(Math.atan2(x-playerx,y-playery))
+}
+
 function draw() {
   ctx.beginPath();
   ctx.moveTo(-500+window.innerWidth/2,-300+window.innerHeight/2);
@@ -67,6 +86,7 @@ function draw() {
 function step() {
   // Program Main Loop
   draw();
+  player();
   window.requestAnimationFrame(step);
 }
 window.requestAnimationFrame(step);
