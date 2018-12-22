@@ -59,8 +59,8 @@ function linepoint(x1_,y1_,x2_,y2_,x_,y_) {
 
 function draw() {
   ctx.beginPath();
-  ctx.moveTo(-500+window.innerWidth,-300+window.innerHeight);
-  ctx.lineTo(500+window.innerWidth,300+window.innerHeight);
+  ctx.moveTo(-500+window.innerWidth/2,-300+window.innerHeight/2);
+  ctx.lineTo(500+window.innerWidth/2,300+window.innerHeight/2);
   ctx.stroke();
 }
 
