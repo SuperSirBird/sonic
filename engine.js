@@ -82,7 +82,7 @@ function player() {
   
   
   ctx.beginPath();
-  ctx.arc(playerx+window.innerWidth/2, playery+window.innerHeight/2, playersize, 0, 2 * Math.PI);
+  ctx.arc(gx(playerx), gy(playery), playersize, 0, 2 * Math.PI);
   ctx.stroke();
 }
 
