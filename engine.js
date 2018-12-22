@@ -44,6 +44,9 @@ function dist(x_,y_) {
   return Math.sqrt((x_*x_)+(y_*y_));
 }
 
+function gx(x_) {return (x_+window.innerWidth/2)}
+function gy(y_) {return -(y_+window.innerHeight/2)}
+
 function linepoint(x1_,y1_,x2_,y2_,x_,y_) {
   // Projected Length Formula = (AB*AC)/|AB|
   // In this case = ((x1*x2)+(y1*y2))/Math.sqrt((x1*x1)+(y1*y1)) substituting x1,y1 for n1-n2
@@ -86,8 +89,8 @@ function player() {
 function draw() {
   ctx.lineWidth = linesize;
   ctx.beginPath();
-  ctx.moveTo(-500+window.innerWidth/2,-300+window.innerHeight/2);
-  ctx.lineTo(500+window.innerWidth/2,300+window.innerHeight/2);
+  ctx.moveTo(gx(-400),gy(-300);
+  ctx.lineTo(gx(400),gy(300));
   ctx.stroke();
 }
 
