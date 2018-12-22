@@ -45,7 +45,7 @@ function dist(x_,y_) {
 }
 
 function gx(x_) {return (x_+window.innerWidth/2)}
-function gy(y_) {return -(y_+window.innerHeight/2)}
+function gy(y_) {return ((y_*-1)+window.innerHeight/2)}
 
 function linepoint(x1_,y1_,x2_,y2_,x_,y_) {
   // Projected Length Formula = (AB*AC)/|AB|
