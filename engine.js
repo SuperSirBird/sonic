@@ -84,7 +84,7 @@ function player() {
 }
 
 function draw() {
-  ctx.lineWidth = 5;
+  ctx.lineWidth = linesize;
   ctx.beginPath();
   ctx.moveTo(-500+window.innerWidth/2,-300+window.innerHeight/2);
   ctx.lineTo(500+window.innerWidth/2,300+window.innerHeight/2);
