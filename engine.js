@@ -73,6 +73,8 @@ function player() {
     accelerate=0;
     playerx+=Math.sin(Math.atan2(x-playerx,y-playery))*-(playersize+linesize+20-dist(x-playerx,y-playery))
     playery+=Math.cos(Math.atan2(x-playerx,y-playery))*-(playersize+linesize+20-dist(x-playerx,y-playery))
+    
+    if (keys[32]) {accelerate = -8}
   }
   if (dist(x-playerx,y-playery)>playersize+linesize+20) {
     accelerate+=1;
@@ -88,6 +90,7 @@ function player() {
 }
 
 function draw() {
+  ctx.lineCap = "round";
   ctx.lineWidth = linesize;
   ctx.beginPath();
   ctx.moveTo(gx(-400),gy(-300));
