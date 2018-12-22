@@ -27,6 +27,10 @@ c.height = window.innerHeight;
 
 var x;
 var y;
+var playerx = 0;
+var playery = 40;
+var gravdir;
+var accelerate = 0;
 
 function linepoint(x1_,y1_,x2_,y2_,x_,y_) {
   // Projected Length Formula = (AB*AC)/|AB|
@@ -47,3 +51,9 @@ function linepoint(x1_,y1_,x2_,y2_,x_,y_) {
   x = x2_+(projdis*sin(projangle));
   y = y2_+(projdis*cos(projangle));
 }
+
+function step() {
+  // Program Main Loop
+  window.requestAnimationFrame(step);
+}
+window.requestAnimationFrame(step);
