@@ -28,7 +28,7 @@ c.height = window.innerHeight;
 var x;
 var y;
 var playerx = 0;
-var playery = 40;
+var playery = 100;
 var playersize = 30;
 var linesize = 15;
 var gravdir;
