@@ -66,6 +66,7 @@ function draw() {
 
 function step() {
   // Program Main Loop
+  draw();
   window.requestAnimationFrame(step);
 }
 window.requestAnimationFrame(step);
