@@ -71,8 +71,8 @@ function player() {
   linepoint(-500,-300,500,300,playerx,playery);
   if (dist(x-playerx,y-playery)<playersize+linesize+20) {
     accelerate=0;
-    playerx+=Math.sin(Math.atan2(x-playerx,y-playery))*(playersize+linesize+20-dist(x-playerx,y-playery))
-    playery+=Math.cos(Math.atan2(x-playerx,y-playery))*(playersize+linesize+20-dist(x-playerx,y-playery))
+    playerx+=Math.sin(Math.atan2(x-playerx,y-playery))*-(playersize+linesize+20-dist(x-playerx,y-playery))
+    playery+=Math.cos(Math.atan2(x-playerx,y-playery))*-(playersize+linesize+20-dist(x-playerx,y-playery))
   }
   if (dist(x-playerx,y-playery)>playersize+linesize+20) {
     accelerate+=1;
