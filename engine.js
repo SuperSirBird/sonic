@@ -68,12 +68,15 @@ function player() {
   linepoint(-500,-300,500,300,playerx,playery);
   if (dist(x-playerx,y-playery)<playersize+linesize) {
     accelerate=0;
+    playerx+=Math.sin(Math.atan2(x-playerx,y-playery))*-1
+    playery+=Math.cos(Math.atan2(x-playerx,y-playery))*-1
   }
   if (dist(x-playerx,y-playery)>playersize+linesize) {
     accelerate+=-1;
+    playerx+=Math.sin(Math.atan2(x-playerx,y-playery))
+    playery+=Math.cos(Math.atan2(x-playerx,y-playery))
   }
-  playerx+=Math.sin(Math.atan2(x-playerx,y-playery))
-  playery+=Math.cos(Math.atan2(x-playerx,y-playery))
+  
   
   ctx.beginPath();
   ctx.arc(playerx+window.innerWidth/2, playery+window.innerHeight/2, playersize, 0, 2 * Math.PI);
