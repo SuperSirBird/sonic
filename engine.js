@@ -69,14 +69,14 @@ function linepoint(x1_,y1_,x2_,y2_,x_,y_) {
 
 function player() {
   linepoint(-500,-300,500,300,playerx,playery);
-  if (dist(x-playerx,y-playery)<playersize+linesize+10) {
+  if (dist(x-playerx,y-playery)<playersize+linesize+20) {
     accelerate=0;
     playerx+=Math.sin(Math.atan2(x-playerx,y-playery))*-1
     playery+=Math.cos(Math.atan2(x-playerx,y-playery))*-1
   }
-  if (dist(x-playerx,y-playery)>playersize+linesize+10) {
+  if (dist(x-playerx,y-playery)>playersize+linesize+20) {
     accelerate+=1;
-    if (accelerate>7) {accelerate=7}
+    if (accelerate>20) {accelerate=20}
     playerx+=accelerate*Math.sin(Math.atan2(x-playerx,y-playery))
     playery+=accelerate*Math.cos(Math.atan2(x-playerx,y-playery))
   }
