@@ -74,7 +74,6 @@ function player() {
     playerx+=Math.sin(Math.atan2(x-playerx,y-playery))*-(playersize+linesize+20-dist(x-playerx,y-playery))
     playery+=Math.cos(Math.atan2(x-playerx,y-playery))*-(playersize+linesize+20-dist(x-playerx,y-playery))
     
-    if (keys[32]) {accelerate = -8}
   }
   if (dist(x-playerx,y-playery)>playersize+linesize+20) {
     accelerate+=1;
@@ -83,6 +82,9 @@ function player() {
     playery+=accelerate*Math.cos(Math.atan2(x-playerx,y-playery))
   }
   
+  if (keys[32]) {accelerate = -8}
+  
+  // Draw Player
   
   ctx.beginPath();
   ctx.arc(gx(playerx), gy(playery), playersize, 0, 2 * Math.PI);
