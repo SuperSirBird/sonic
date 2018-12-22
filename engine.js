@@ -60,8 +60,8 @@ function linepoint(x1_,y1_,x2_,y2_,x_,y_) {
   if (projdis<0) {projdis=0}
   if (projdis>Math.sqrt((x1_*x1_)+(y1_*y1_))) {projdis=Math.sqrt((x1_*x1_)+(y1_*y1_))}
   
-  x = x2_+(projdis*sin(projangle));
-  y = y2_+(projdis*cos(projangle));
+  x = x2_+(projdis*Math.sin(projangle));
+  y = y2_+(projdis*Math.cos(projangle));
 }
 
 function player() {
