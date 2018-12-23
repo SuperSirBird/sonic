@@ -7,7 +7,7 @@ A Javascript Sonic Physics Engine
 @date: 22/12/2018 AUS
 @credit: Sonic Inspriation
 
-Feel free to use engine in other projects
+Feel free to use the sonic engine in other projects
 however credit would be appriciated
 
 */
