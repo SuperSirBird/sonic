@@ -72,7 +72,7 @@ function player() {
   accelerate+=1;
   if (keys[32]) {accelerate = -8}
   // Check for obj's loop
-  if (dist(x-playerx,y-playery)>playersize+linesize+10 || dist(x-playerx,y-playery)==playersize+linesize+10) {
+  if (dist(x-playerx,y-playery)>(playersize+linesize+10)-1) {
     if (accelerate>20) {accelerate=20}
     playerx+=accelerate*Math.sin(Math.atan2(x-playerx,y-playery))
     playery+=accelerate*Math.cos(Math.atan2(x-playerx,y-playery))
