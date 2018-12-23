@@ -139,12 +139,14 @@ function getclose() {
     diff = 180-((rota*180/Math.PI)-(rota2*180/Math.PI));
   }
   
-  if (diff > 60) {
+  if (Math.abs(diff) > 60) {
     closeline = oldl;
     
-    playerx = olx;
-    playery = oly;
-    accelerate = olv;
+    if (onground==1) {
+      playerx = olx;
+      playery = oly;
+      accelerate = olv;
+    }
     
   }
   
