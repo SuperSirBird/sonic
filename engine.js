@@ -63,10 +63,8 @@ function sonicsprite() {
   ctx.translate(gx(playerx-((playersize*2.5)/2)),gy(playery+((playersize*2.5)/2)));
   
   // Find Rotation
-  linepoint(linex1[closeline],liney1[closeline],linex2[closeline],liney2[closeline],playerx,playery);
-  rota = Math.atan2(x,y)
   
-  ctx.rotate(0);
+  ctx.rotate(rota);
   ctx.drawImage(img, 0, 0,playersize*2.5,playersize*2.5);
   ctx.restore();
 }
@@ -142,6 +140,8 @@ function player() {
     playerx+=Math.sin((-90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
     playery+=Math.cos((-90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
   }
+  
+  rota = Math.atan2(x-playerx,y-playery);
 
   
   // Draw Player
