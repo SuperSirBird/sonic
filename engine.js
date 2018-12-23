@@ -22,6 +22,7 @@ var c = document.getElementById("myCanvas");
 var ctx=c.getContext("2d");
 c.width  = window.innerWidth;
 c.height = window.innerHeight;
+ctx.restore();
 
 // Variables
 var x;
@@ -56,7 +57,10 @@ function gy(y_) {return ((y_*-1)+window.innerHeight/2)}
 
 function sonicsprite() {
   var img = document.getElementById("sonicwalk");
-  ctx.drawImage(img, gx(playerx-((playersize*2.5)/2)), gy(playery+((playersize*2.5)/2)),playersize*2.5,playersize*2.5);
+  ctx.rotate(90*(Math.PI/180))
+  ctx.transform(1,0,0,1,gx(playerx-((playersize*2.5)/2)),gy(playery+((playersize*2.5)/2)))
+  ctx.drawImage(img, 0, 0,playersize*2.5,playersize*2.5);
+  ctx.restore();
 }
 
 function linepoint(x1_,y1_,x2_,y2_,x_,y_) {
