@@ -54,8 +54,8 @@ function dist(x_,y_) {
   return Math.sqrt((x_*x_)+(y_*y_));
 }
 
-function gx(x_) {return (x_+window.innerWidth/2)}
-function gy(y_) {return ((y_*-1)+window.innerHeight/2)}
+function gx(x_) {return ((x_-playerx)+window.innerWidth/2)}
+function gy(y_) {return (((y_-playery)*-1)+window.innerHeight/2)}
 
 function sonicsprite() {
   ctx.save();
