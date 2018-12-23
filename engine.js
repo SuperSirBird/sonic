@@ -74,7 +74,7 @@ function sonicsprite() {
   // Character Flip?
   if (lastx == 1) {
     ctx.scale(-1,1)
-    ctx.translate(-transx,transy);
+    ctx.translate(transx,transy);
   } else {ctx.translate(transx,transy);}
   
   // Find Rotation
