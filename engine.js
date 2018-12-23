@@ -138,7 +138,7 @@ function getclose() {
   } else {
     diff = 180-((rota*180/Math.PI)-(rota2*180/Math.PI));
   }
-  if (Math.abs((rota*180/Math.PI)-(rota2*180/Math.PI)) = 180) {diff = 180}
+  if (Math.abs((rota*180/Math.PI)-(rota2*180/Math.PI)) == 180) {diff = 180}
   
   ctx.fillText(Math.abs(diff), 250, 50);
   
