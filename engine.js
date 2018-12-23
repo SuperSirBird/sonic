@@ -24,7 +24,6 @@ c.width  = window.innerWidth;
 c.height = window.innerHeight;
 
 // Variables
-
 var x;
 var y;
 var playerx = 0;
@@ -34,11 +33,18 @@ var linesize = 15;
 var gravdir;
 var accelerate = 0;
 var onground;
+var closeline = 0;
 
 // Keys detector
 var keys = {};
 window.onkeyup = function(e) { keys[e.keyCode] = false; }
 window.onkeydown = function(e) { keys[e.keyCode] = true; }
+
+// Map
+var linex1 = [-350];
+var liney1 = [-300];
+var linex2 = [350];
+var liney2 = [300];
 
 function dist(x_,y_) {
   // Pythagorean Theorem
@@ -69,7 +75,7 @@ function linepoint(x1_,y1_,x2_,y2_,x_,y_) {
 }
 
 function player() {
-  linepoint(-400,-300,400,300,playerx,playery);
+  linepoint(linex1[closeline],liney1[closeline],linex2[closeline],liney2[closeline],playerx,playery);
   
   // Jump/fall handling
   
@@ -86,7 +92,7 @@ function player() {
     playery+=accelerate*Math.cos(Math.atan2(x-playerx,y-playery))
     onground=0;
   }
-  linepoint(-400,-300,400,300,playerx,playery);
+  linepoint(linex1[closeline],liney1[closeline],linex2[closeline],liney2[closeline],playerx,playery);
   if (dist(x-playerx,y-playery)<(playersize+linesize+10) && !(jumpframe)) {
     accelerate=0;
     playerx+=Math.sin(Math.atan2(x-playerx,y-playery))*(-((playersize+linesize+10)-dist(x-playerx,y-playery)))
