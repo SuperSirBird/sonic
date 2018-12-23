@@ -134,7 +134,7 @@ function getclose() {
   var rota2 = Math.atan2(x-playerx,y-playery);
   var diff = 0;
   if (Math.abs((rota*180/Math.PI)-(rota2*180/Math.PI)) < 180) {
-    diff = Math.abs((rota*180/Math.PI)-(rota2*180/Math.PI));
+    diff = (rota*180/Math.PI)-(rota2*180/Math.PI);
   } else {
     diff = 180-((rota*180/Math.PI)-(rota2*180/Math.PI));
   }
