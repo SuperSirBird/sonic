@@ -121,8 +121,8 @@ function draw() {
   ctx.lineCap = "round";
   ctx.lineWidth = linesize;
   ctx.beginPath();
-  ctx.moveTo(gx(-400),gy(-300));
-  ctx.lineTo(gx(400),gy(300));
+  ctx.moveTo(gx(-350),gy(-300));
+  ctx.lineTo(gx(350),gy(300));
   ctx.stroke();
 }
 
