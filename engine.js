@@ -64,8 +64,8 @@ function sonicsprite() {
   var transx = gx(playerx+((playersize*2.5)/2)*Math.sin(rota));
   var transy = gy(playery+((playersize*2.5)/2)*Math.cos(rota));
   
-  transx -= ((playersize*2.5)/2)*Math.sin(rota);
-  transy -= ((playersize*2.5)/2)*Math.cos(rota);
+  transx += ((playersize*2.5)/2)*Math.sin(rota);
+  transy += ((playersize*2.5)/2)*Math.cos(rota);
   
   ctx.translate(transx,transy);
   
