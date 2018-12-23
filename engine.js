@@ -41,6 +41,10 @@ var closeline = 0;
 var rota;
 var lastx = 0;
 
+var olx;
+var oly;
+var olv;
+
 // Keys detector
 var keys = {};
 window.onkeyup = function(e) { keys[e.keyCode] = false; }
@@ -123,7 +127,6 @@ function getclose() {
     }
   }
   closeline=smallestitem;
-  if (closeline != oldl) {accelerate=0}
   
   // If angle to sharp, revert
   
@@ -138,11 +141,26 @@ function getclose() {
   
   if (diff > 60) {
     closeline = oldl;
+    
+    // If onground then moveback
+    if (onground==1) {
+      playerx = olx;
+      playery = oly;
+      accelerate = olv;
+    }
   }
+  
+  // If switch reset velocity
+  if (closeline != oldl) {accelerate=0}
   
 }
 
 function player() {
+  
+  olx=playerx;
+  oly=playery;
+  olv = accelerate;
+  
   linepoint(linex1[closeline],liney1[closeline],linex2[closeline],liney2[closeline],playerx,playery);
   
   // Jump/fall handling
