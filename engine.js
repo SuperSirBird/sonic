@@ -56,7 +56,7 @@ function gy(y_) {return ((y_*-1)+window.innerHeight/2)}
 
 function sonicsprite() {
   var img = document.getElementById("sonicwalk");
-  ctx.drawImage(img, gx(playerx), gy(playery),playersize,playersize);
+  ctx.drawImage(img, gx(playerx), gy(playery),playersize*2.5,playersize*2.5);
 }
 
 function linepoint(x1_,y1_,x2_,y2_,x_,y_) {
