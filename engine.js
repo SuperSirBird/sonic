@@ -72,15 +72,15 @@ function player() {
   accelerate+=1;
   if (keys[32]) {accelerate = -8}
   // Check for obj's loop
-  if (dist(x-playerx,y-playery)>playersize+linesize+10) {
+  if (dist(x-playerx,y-playery)>playersize+linesize+10 || dist(x-playerx,y-playery)==playersize+linesize+10) {
     if (accelerate>20) {accelerate=20}
     playerx+=accelerate*Math.sin(Math.atan2(x-playerx,y-playery))
     playery+=accelerate*Math.cos(Math.atan2(x-playerx,y-playery))
   }
   if (dist(x-playerx,y-playery)<playersize+linesize+10) {
     accelerate=0;
-    playerx+=Math.sin(Math.atan2(x-playerx,y-playery))*(-((playersize+linesize+10)-dist(x-playerx,y-playery))*0.9)
-    playery+=Math.cos(Math.atan2(x-playerx,y-playery))*(-((playersize+linesize+10)-dist(x-playerx,y-playery))*0.9)
+    playerx+=Math.sin(Math.atan2(x-playerx,y-playery))*(-((playersize+linesize+10)-dist(x-playerx,y-playery)))
+    playery+=Math.cos(Math.atan2(x-playerx,y-playery))*(-((playersize+linesize+10)-dist(x-playerx,y-playery)))
 
   }
   if (keys[39]) {
