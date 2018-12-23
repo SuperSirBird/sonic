@@ -58,7 +58,7 @@ function dist(x_,y_) {
 }
 
 function gx(x_) {return ((x_-playerx)+window.innerWidth/2)-camoffx}
-function gy(y_) {return ((((y_-150)-playery)*-1)+window.innerHeight/2)}
+function gy(y_) {return ((((y_-90)-playery)*-1)+window.innerHeight/2)}
 
 function sonicsprite() {
   ctx.save();
