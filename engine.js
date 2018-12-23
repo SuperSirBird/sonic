@@ -98,6 +98,7 @@ function player() {
     accelerate = -20;
     jumpframe = true;
   }
+  onground=1;
   // Check for obj's loop
   if (dist(x-playerx,y-playery)>(playersize+linesize+10) || jumpframe) {
     if (accelerate>20) {accelerate=20}
