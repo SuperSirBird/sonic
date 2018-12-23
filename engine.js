@@ -22,6 +22,7 @@ var c = document.getElementById("myCanvas");
 var ctx=c.getContext("2d");
 c.width  = window.innerWidth;
 c.height = window.innerHeight;
+ctx.save();
 ctx.restore();
 
 // Variables
@@ -56,6 +57,7 @@ function gx(x_) {return (x_+window.innerWidth/2)}
 function gy(y_) {return ((y_*-1)+window.innerHeight/2)}
 
 function sonicsprite() {
+  ctx.save();
   var img = document.getElementById("sonicwalk");
   ctx.rotate(90*(Math.PI/180));
   ctx.translate(gx(playerx-((playersize*2.5)/2)),gy(playery+((playersize*2.5)/2)));
