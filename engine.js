@@ -145,12 +145,12 @@ function player() {
   if (keys[39]) {
     playerx+=Math.sin((90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
     playery+=Math.cos((90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
-    camoffx = camoffx+((200-camoffx)/3)
+    camoffx = camoffx+((200-camoffx)/5)
   }
   if (keys[37]) {
     playerx+=Math.sin((-90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
     playery+=Math.cos((-90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
-    camoffx = camoffx+((-200-camoffx)/3)
+    camoffx = camoffx+((-200-camoffx)/5)
   }
   
   rota = Math.atan2(x-playerx,y-playery);
