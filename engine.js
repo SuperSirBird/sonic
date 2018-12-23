@@ -83,6 +83,14 @@ function player() {
     playery+=Math.cos(Math.atan2(x-playerx,y-playery))*-(playersize+linesize+20-dist(x-playerx,y-playery))
     
   }
+  if (keys[39]) {
+    playerx+=Math.sin(90+Math.atan2(x-playerx,y-playery))*2
+    playery+=Math.cos(90+Math.atan2(x-playerx,y-playery))*2
+  }
+  if (keys[37]) {
+    playerx+=Math.sin(-90+Math.atan2(x-playerx,y-playery))*2
+    playery+=Math.cos(-90+Math.atan2(x-playerx,y-playery))*2
+  }
   
   
   // Draw Player
