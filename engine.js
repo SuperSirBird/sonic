@@ -26,6 +26,8 @@ ctx.save();
 ctx.restore();
 
 // Variables
+var camoffx = 0;
+
 var x;
 var y;
 var playerx = 0;
@@ -61,6 +63,7 @@ function sonicsprite() {
   ctx.save();
   var img = document.getElementById("sonicwalk");
   
+  // Centering Sonics Position
   var transx = gx(playerx-((playersize*2.5)/2)*Math.sin(rota));
   var transy = gy(playery-((playersize*2.5)/2)*Math.cos(rota));
   
@@ -142,10 +145,12 @@ function player() {
   if (keys[39]) {
     playerx+=Math.sin((90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
     playery+=Math.cos((90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
+    camoffx = camoffx+((200-camoffx)/3)
   }
   if (keys[37]) {
     playerx+=Math.sin((-90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
     playery+=Math.cos((-90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
+    camoffx = camoffx+((-200-camoffx)/3)
   }
   
   rota = Math.atan2(x-playerx,y-playery);
