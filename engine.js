@@ -70,6 +70,7 @@ function linepoint(x1_,y1_,x2_,y2_,x_,y_) {
 function player() {
   linepoint(-500,-300,500,300,playerx,playery);
   accelerate+=1;
+  if (keys[32]) {accelerate = -8}
   // Check for obj's loop
   if (dist(x-playerx,y-playery)>playersize+linesize+20) {
     if (accelerate>20) {accelerate=20}
@@ -83,7 +84,6 @@ function player() {
     
   }
   
-  if (keys[32]) {accelerate = -8}
   
   // Draw Player
   
