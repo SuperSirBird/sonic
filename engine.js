@@ -39,6 +39,7 @@ var accelerate = 0;
 var onground;
 var closeline = 0;
 var rota;
+var lastx = 0;
 
 // Keys detector
 var keys = {};
@@ -70,7 +71,11 @@ function sonicsprite() {
   transx -= ((playersize*2.5)/2)*Math.sin(rota+(270*Math.PI/180));
   transy -= ((playersize*2.5)/2)*Math.cos(rota+(90*Math.PI/180));
   
-  ctx.translate(transx,transy);
+  // Character Flip?
+  if (lastx == 1) {
+    ctx.scale(-1,1)
+    ctx.translate(-transx,transy);
+  } else {ctx.translate(transx,transy);}
   
   // Find Rotation
   
@@ -145,11 +150,13 @@ function player() {
   if (keys[39]) {
     playerx+=Math.sin((90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
     playery+=Math.cos((90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
+    lastx=0;
     camoffx = camoffx+((200-camoffx)/10)
   }
   if (keys[37]) {
     playerx+=Math.sin((-90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
     playery+=Math.cos((-90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
+    lastx=1;
     camoffx = camoffx+((-200-camoffx)/10)
   }
   
