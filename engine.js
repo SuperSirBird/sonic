@@ -66,7 +66,7 @@ function sonicsprite() {
   linepoint(linex1[closeline],liney1[closeline],linex2[closeline],liney2[closeline],playerx,playery);
   rota = Math.atan2(x,y)
   
-  ctx.rotate(rota * Math.PI / 180);
+  ctx.rotate(rota);
   ctx.drawImage(img, 0, 0,playersize*2.5,playersize*2.5);
   ctx.restore();
 }
