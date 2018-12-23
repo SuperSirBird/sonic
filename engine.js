@@ -70,10 +70,13 @@ function linepoint(x1_,y1_,x2_,y2_,x_,y_) {
 
 function player() {
   linepoint(-400,-300,400,300,playerx,playery);
+  
+  // Jump/fall handling
+  
   accelerate+=1;
   var jumpframe = false;
   if (keys[32] && accelerate<2 && accelerate>-2 && onground==1) {
-    accelerate = -8
+    accelerate = -20;
     jumpframe = true;
   }
   // Check for obj's loop
@@ -91,6 +94,7 @@ function player() {
     onground=1;
 
   }
+  // Player XY move
   if (keys[39]) {
     playerx+=Math.sin((90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
     playery+=Math.cos((90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
