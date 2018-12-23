@@ -64,6 +64,8 @@ function sonicsprite() {
   ctx.save();
   var img = document.getElementById("sonicwalk");
   
+  ctx.rotate(rota+(180*Math.PI/180));
+  
   // Character Flip?
   if (lastx == 1) {
     ctx.scale(-1,1)
@@ -88,7 +90,6 @@ function sonicsprite() {
   
   // Find Rotation
   
-  ctx.rotate(rota+(180*Math.PI/180));
   ctx.drawImage(img, 0, 0,playersize*2.5,playersize*2.5);
   ctx.restore();
 }
