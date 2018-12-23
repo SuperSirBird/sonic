@@ -60,6 +60,11 @@ function dist(x_,y_) {
 function gx(x_) {return ((x_-playerx)+window.innerWidth/2)-camoffx}
 function gy(y_) {return ((((y_-90)-playery)*-1)+window.innerHeight/2)}
 
+function drawlogo() {
+  var img = document.getElementById("soniclogo");
+  ctx.drawImage(img, 20, 20,100,100;
+}
+
 function sonicsprite() {
   ctx.save();
   
