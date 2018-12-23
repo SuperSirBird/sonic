@@ -41,10 +41,10 @@ window.onkeyup = function(e) { keys[e.keyCode] = false; }
 window.onkeydown = function(e) { keys[e.keyCode] = true; }
 
 // Map
-var linex1 = [-350];
-var liney1 = [-230];
-var linex2 = [350];
-var liney2 = [230];
+var linex1 = [-300,300,300,-300];
+var liney1 = [-300,-300,300,300];
+var linex2 = [300,300,-300,-300];
+var liney2 = [-300,300,300,-300];
 
 function dist(x_,y_) {
   // Pythagorean Theorem
@@ -120,10 +120,12 @@ function player() {
 function draw() {
   ctx.lineCap = "round";
   ctx.lineWidth = linesize*2;
-  ctx.beginPath();
-  ctx.moveTo(gx(-350),gy(-230));
-  ctx.lineTo(gx(350),gy(230));
-  ctx.stroke();
+  for (i=0;i<linex1.length;i++) {
+    ctx.beginPath();
+    ctx.moveTo(gx(linex1[i]),gy(liney1[i]));
+    ctx.lineTo(gx(linex2[i]),gy(liney2[i]));
+    ctx.stroke();
+  }
 }
 
 function step() {
