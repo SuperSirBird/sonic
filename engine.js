@@ -31,7 +31,7 @@ var camoffx = 0;
 var x;
 var y;
 var playerx = 0;
-var playery = 100;
+var playery = -1;
 var playersize = 30;
 var linesize = 15;
 var gravdir;
