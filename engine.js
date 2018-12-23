@@ -64,31 +64,16 @@ function sonicsprite() {
   ctx.save();
   var img = document.getElementById("sonicwalk");
   
-  ctx.rotate(rota+(180*Math.PI/180));
+  // Centering Sonics Position
+  var transx = gx(playerx-((playersize*2.5)/2)*Math.sin(rota));
+  var transy = gy(playery-((playersize*2.5)/2)*Math.cos(rota));
   
-  // Character Flip?
-  if (lastx == 1) {
-    ctx.scale(-1,1)
-    // Centering Sonics Position
-    var transx = gx(playerx-((playersize*2.5)/2)*Math.sin(rota+(180*Math.PI/180)));
-    var transy = gy(playery-((playersize*2.5)/2)*Math.cos(rota));
-  
-    transx -= ((playersize*2.5)/2)*Math.sin(rota+(270*Math.PI/180)+(180*Math.PI/180));
-    transy -= ((playersize*2.5)/2)*Math.cos(rota+(90*Math.PI/180));
-    ctx.translate(-transx,transy);
-    
-  } 
-  else {
-    // Centering Sonics Position
-    var transx = gx(playerx-((playersize*2.5)/2)*Math.sin(rota));
-    var transy = gy(playery-((playersize*2.5)/2)*Math.cos(rota));
-  
-    transx -= ((playersize*2.5)/2)*Math.sin(rota+(270*Math.PI/180));
-    transy -= ((playersize*2.5)/2)*Math.cos(rota+(90*Math.PI/180));
-    ctx.translate(transx,transy);
-  }
+  transx -= ((playersize*2.5)/2)*Math.sin(rota+(270*Math.PI/180));
+  transy -= ((playersize*2.5)/2)*Math.cos(rota+(90*Math.PI/180));
+  ctx.translate(transx,transy);
   
   // Find Rotation
+  ctx.rotate(rota+(180*Math.PI/180));
   
   ctx.drawImage(img, 0, 0,playersize*2.5,playersize*2.5);
   ctx.restore();
