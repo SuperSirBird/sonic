@@ -60,7 +60,12 @@ function sonicsprite() {
   ctx.save();
   var img = document.getElementById("sonicwalk");
   ctx.translate(gx(playerx-((playersize*2.5)/2)),gy(playery+((playersize*2.5)/2)));
-  ctx.rotate(45 * Math.PI / 180);
+  
+  // Find Rotation
+  linepoint(linex1[closeline],liney1[closeline],linex2[closeline],liney2[closeline],playerx,playery);
+  var rot = atan2(x,y)
+  
+  ctx.rotate(rot * Math.PI / 180);
   ctx.drawImage(img, 0, 0,playersize*2.5,playersize*2.5);
   ctx.restore();
 }
