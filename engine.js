@@ -88,8 +88,8 @@ function player() {
     playery+=Math.cos((90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
   }
   if (keys[37]) {
-    playerx+=Math.sin((-90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*6
-    playery+=Math.cos((-90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*6
+    playerx+=Math.sin((-90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
+    playery+=Math.cos((-90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
   }
 
 
