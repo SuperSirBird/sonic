@@ -208,9 +208,9 @@ function draw() {
 function step() {
   // Program Main Loop
   ctx.clearRect(0, 0, c.width, c.height);
-  draw();
-  getclose();
   player();
+  getclose();
+  draw();
   drawlogo();
   window.requestAnimationFrame(step);
 }
