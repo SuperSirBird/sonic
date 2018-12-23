@@ -42,9 +42,9 @@ window.onkeydown = function(e) { keys[e.keyCode] = true; }
 
 // Map
 var linex1 = [-350];
-var liney1 = [-300];
+var liney1 = [-230];
 var linex2 = [350];
-var liney2 = [300];
+var liney2 = [230];
 
 function dist(x_,y_) {
   // Pythagorean Theorem
@@ -121,8 +121,8 @@ function draw() {
   ctx.lineCap = "round";
   ctx.lineWidth = linesize;
   ctx.beginPath();
-  ctx.moveTo(gx(-350),gy(-300));
-  ctx.lineTo(gx(350),gy(300));
+  ctx.moveTo(gx(-350),gy(-230));
+  ctx.lineTo(gx(350),gy(230));
   ctx.stroke();
 }
 
