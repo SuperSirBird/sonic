@@ -138,7 +138,7 @@ function getclose() {
   } else {
     diff = 180-((rota*180/Math.PI)-(rota2*180/Math.PI));
   }
-  
+  ctx.fillText(Math.abs(diff), 10, 50);
   if (Math.abs(diff) > 60) {
     closeline = oldl;
     
