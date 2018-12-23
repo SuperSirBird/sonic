@@ -124,6 +124,22 @@ function getclose() {
   }
   closeline=smallestitem;
   if (closeline != oldl) {accelerate=0}
+  
+  // If angle to sharp, revert
+  
+  linepoint(linex1[closeline],liney1[closeline],linex2[closeline],liney2[closeline],playerx,playery);
+  var rota2 = Math.atan2(x-playerx,y-playery);
+  var diff = 0;
+  if (Math.abs(rota-rota2) < 180) {
+    diff = Math.abs(rota-rota2);
+  } else {
+    diff = 180-(rota-rota2);
+  }
+  
+  if (diff > 60) {
+    closeline = oldl;
+  }
+  
 }
 
 function player() {
