@@ -153,13 +153,13 @@ function player() {
     playerx+=Math.sin((90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
     playery+=Math.cos((90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
     lastx=0;
-    camoffx = camoffx+((200-camoffx)/10)
+    camoffx = camoffx+((100-camoffx)/10)
   }
   if (keys[37]) {
     playerx+=Math.sin((-90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
     playery+=Math.cos((-90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
     lastx=1;
-    camoffx = camoffx+((-200-camoffx)/10)
+    camoffx = camoffx+((-100-camoffx)/10)
   }
   
   rota = Math.atan2(x-playerx,y-playery);
