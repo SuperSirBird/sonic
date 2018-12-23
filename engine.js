@@ -33,6 +33,7 @@ var playersize = 30;
 var linesize = 15;
 var gravdir;
 var accelerate = 0;
+var onground;
 
 // Keys detector
 var keys = {};
@@ -71,7 +72,7 @@ function player() {
   linepoint(-400,-300,400,300,playerx,playery);
   accelerate+=1;
   var jumpframe = false;
-  if (keys[32] && accelerate<2 && accelerate>-2) {
+  if (keys[32] && accelerate<2 && accelerate>-2 && onground==1) {
     accelerate = -8
     jumpframe = true;
   }
@@ -80,12 +81,14 @@ function player() {
     if (accelerate>20) {accelerate=20}
     playerx+=accelerate*Math.sin(Math.atan2(x-playerx,y-playery))
     playery+=accelerate*Math.cos(Math.atan2(x-playerx,y-playery))
+    onground=0;
   }
   linepoint(-400,-300,400,300,playerx,playery);
   if (dist(x-playerx,y-playery)<(playersize+linesize+10) && !(jumpframe)) {
     accelerate=0;
     playerx+=Math.sin(Math.atan2(x-playerx,y-playery))*(-((playersize+linesize+10)-dist(x-playerx,y-playery)))
     playery+=Math.cos(Math.atan2(x-playerx,y-playery))*(-((playersize+linesize+10)-dist(x-playerx,y-playery)))
+    onground=1;
 
   }
   if (keys[39]) {
@@ -97,7 +100,7 @@ function player() {
     playery+=Math.cos((-90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
   }
 
-
+  
   // Draw Player
   ctx.beginPath();
   ctx.arc(gx(playerx), gy(playery), playersize, 0, 2 * Math.PI);
