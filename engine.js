@@ -62,7 +62,7 @@ function gy(y_) {return ((((y_-90)-playery)*-1)+window.innerHeight/2)}
 
 function drawlogo() {
   var img = document.getElementById("soniclogo");
-  ctx.drawImage(img, -50, -50,280,155);
+  ctx.drawImage(img, -80, -20,280,155);
 }
 
 function sonicsprite() {
