@@ -62,7 +62,14 @@ function gy(y_) {return (((y_-playery)*-1)+window.innerHeight/2)}
 
 function sonicsprite() {
   ctx.save();
-  var img = document.getElementById("sonicwalk");
+  
+  // Walking left/Right
+  var img;
+  if (lastx==0) {
+    img = document.getElementById("sonicwalk");
+  } else {
+    img = document.getElementById("sonicwalk2");
+  }
   
   // Centering Sonics Position
   var transx = gx(playerx-((playersize*2.5)/2)*Math.sin(rota));
