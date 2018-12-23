@@ -77,7 +77,7 @@ function player() {
     playery+=Math.cos(Math.atan2(x-playerx,y-playery))*-(playersize+linesize+20-dist(x-playerx,y-playery))
     
   }
-  if (dist(x-playerx,y-playery)>playersize+linesize+20) {
+  if (dist(x-playerx,y-playery)>playersize+linesize+19) {
     if (accelerate>20) {accelerate=20}
     playerx+=accelerate*Math.sin(Math.atan2(x-playerx,y-playery))
     playery+=accelerate*Math.cos(Math.atan2(x-playerx,y-playery))
