@@ -68,9 +68,32 @@ function linepoint(x1_,y1_,x2_,y2_,x_,y_) {
 }
 
 function player() {
-  linepoint(-500,-300,500,300,playerx,playery);
-  if (keys[37]) {playerx-=1}
-  if (keys[39]) {playerx+=1}
+  linepoint(-400,-300,400,300,playerx,playery);
+  accelerate+=1;
+  if (keys[32]) {accelerate = -8}
+  // Check for obj's loop
+  if (dist(x-playerx,y-playery)>playersize+linesize+20) {
+    if (accelerate>20) {accelerate=20}
+    playerx+=accelerate*Math.sin(Math.atan2(x-playerx,y-playery))
+    playery+=accelerate*Math.cos(Math.atan2(x-playerx,y-playery))
+  }
+  if (dist(x-playerx,y-playery)<playersize+linesize+20) {
+    accelerate=0;
+    playerx+=Math.sin(Math.atan2(x-playerx,y-playery))*-2
+    playery+=Math.cos(Math.atan2(x-playerx,y-playery))*-2
+
+  }
+  if (keys[39]) {
+    playerx+=Math.sin(90+Math.atan2(x-playerx,y-playery))*2
+    playery+=Math.cos(90+Math.atan2(x-playerx,y-playery))*2
+  }
+  if (keys[37]) {
+    playerx+=Math.sin(-90+Math.atan2(x-playerx,y-playery))*2
+    playery+=Math.cos(-90+Math.atan2(x-playerx,y-playery))*2
+  }
+
+
+  // Draw Player
   ctx.beginPath();
   ctx.arc(gx(playerx), gy(playery), playersize, 0, 2 * Math.PI);
   ctx.stroke();
