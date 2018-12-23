@@ -60,7 +60,14 @@ function gy(y_) {return (((y_-playery)*-1)+window.innerHeight/2)}
 function sonicsprite() {
   ctx.save();
   var img = document.getElementById("sonicwalk");
-  ctx.translate(gx(playerx+((playersize*2.5)/2)*Math.sin(rota)),gy(playery+((playersize*2.5)/2)*Math.cos(rota)));
+  
+  var transx = gx(playerx+((playersize*2.5)/2)*Math.sin(rota));
+  var transy = gy(playery+((playersize*2.5)/2)*Math.cos(rota));
+  
+  transx -= (playersize*2.5)/2)*Math.sin(rota);
+  transy -= (playersize*2.5)/2)*Math.cos(rota);
+  
+  ctx.translate(transx,transy);
   
   // Find Rotation
   
