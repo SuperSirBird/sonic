@@ -79,8 +79,8 @@ function player() {
   }
   if (dist(x-playerx,y-playery)<playersize+linesize+10) {
     accelerate=0;
-    playerx+=Math.sin(Math.atan2(x-playerx,y-playery))*-2
-    playery+=Math.cos(Math.atan2(x-playerx,y-playery))*-2
+    playerx+=Math.sin(Math.atan2(x-playerx,y-playery))*-((playersize+linesize+10)-dist(x-playerx,y-playery))
+    playery+=Math.cos(Math.atan2(x-playerx,y-playery))*-((playersize+linesize+10)-dist(x-playerx,y-playery))
 
   }
   if (keys[39]) {
