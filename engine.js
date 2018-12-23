@@ -27,7 +27,7 @@ c.height = window.innerHeight;
 var x;
 var y;
 var playerx = 0;
-var playery = 400;
+var playery = 100;
 var playersize = 30;
 var linesize = 15;
 var gravdir;
@@ -72,6 +72,19 @@ function linepoint(x1_,y1_,x2_,y2_,x_,y_) {
   
   x = x2_+(projdis*Math.sin(projangle));
   y = y2_+(projdis*Math.cos(projangle));
+}
+
+function getclose() {
+  var smallestdis = 99999999;
+  var smallestitem = 1;
+  for (i=0;i<linex1.length;i++) {
+    linepoint(linex1[i],liney1[i],linex2[i],liney2[i],playerx,playery);
+    if (dist(x-playerx,y-playery)<smallestdis) {
+      smallestdis=dist(x-playerx,y-playery)
+      smallestitem=i;
+    }
+  }
+  closeline=smallestitem;
 }
 
 function player() {
@@ -132,6 +145,7 @@ function step() {
   // Program Main Loop
   ctx.clearRect(0, 0, c.width, c.height);
   draw();
+  getclose();
   player();
   window.requestAnimationFrame(step);
 }
