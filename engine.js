@@ -94,7 +94,7 @@ function player() {
   
   accelerate+=1;
   var jumpframe = false;
-  if (keys[32] && accelerate<2 && accelerate>-2 && onground==1) {
+  if (keys[32] && onground==1) {
     accelerate = -20;
     jumpframe = true;
   }
