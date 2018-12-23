@@ -71,7 +71,7 @@ function sonicsprite() {
   
   // Find Rotation
   
-  ctx.rotate(rota);
+  ctx.rotate(rota+(180*Math.PI/180));
   ctx.drawImage(img, 0, 0,playersize*2.5,playersize*2.5);
   ctx.restore();
 }
