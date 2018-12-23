@@ -142,12 +142,10 @@ function getclose() {
   if (diff > 60) {
     closeline = oldl;
     
-    // If onground then moveback
-    if (onground==1) {
-      playerx = olx;
-      playery = oly;
-      accelerate = olv;
-    }
+    playerx = olx;
+    playery = oly;
+    accelerate = olv;
+    
   }
   
   // If switch reset velocity
