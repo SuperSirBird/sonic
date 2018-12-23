@@ -128,6 +128,7 @@ function player() {
 
   
   // Draw Player
+  ctx.lineWidth = 10;
   ctx.beginPath();
   ctx.arc(gx(playerx), gy(playery), playersize, 0, 2 * Math.PI);
   ctx.stroke();
