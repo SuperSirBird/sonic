@@ -119,7 +119,7 @@ function player() {
 
 function draw() {
   ctx.lineCap = "round";
-  ctx.lineWidth = linesize;
+  ctx.lineWidth = linesize*2;
   ctx.beginPath();
   ctx.moveTo(gx(-350),gy(-230));
   ctx.lineTo(gx(350),gy(230));
