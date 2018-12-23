@@ -130,10 +130,10 @@ function getclose() {
   linepoint(linex1[closeline],liney1[closeline],linex2[closeline],liney2[closeline],playerx,playery);
   var rota2 = Math.atan2(x-playerx,y-playery);
   var diff = 0;
-  if (Math.abs(rota-rota2) < 180) {
-    diff = Math.abs(rota-rota2);
+  if (Math.abs((rota*180/Math.PI)-(rota2*180/Math.PI)) < 180) {
+    diff = Math.abs((rota*180/Math.PI)-(rota2*180/Math.PI));
   } else {
-    diff = 180-(rota-rota2);
+    diff = 180-((rota*180/Math.PI)-(rota2*180/Math.PI));
   }
   
   if (diff > 60) {
