@@ -44,7 +44,6 @@ var rota;
 var lastx = 0;
 var speed=0;
 var dir;
-var oldir = 0;
 
 var olx;
 var oly;
@@ -85,11 +84,7 @@ function sonicsprite() {
     img = document.getElementById("sonicwalk2");
   }
   
-  if (Math.abs(rota-oldir) < 180) {
-    dir=oldir + ((rota-oldir) % Math.PI)/2;
-  } else {dir=oldir + ((180-rota-oldir) % Math.PI)/2;}
-  
-  dir = oldir + (rota-oldir)/2;
+  dir = rota
   
   // Centering Sonics Position
   var transx = gx(playerx-((playersize*2.6)/2)*Math.sin(dir));
@@ -105,7 +100,6 @@ function sonicsprite() {
   ctx.drawImage(img, 0, 0,playersize*2.6,playersize*2.6);
   ctx.restore();
   
-  oldir = dir;
 }
 
 function linepoint(x1_,y1_,x2_,y2_,x_,y_) {
