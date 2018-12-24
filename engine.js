@@ -95,7 +95,7 @@ function sonicsprite() {
   }
   
   dir = rota
-  if (onground==0) {dir=rota+(framecount*Math.PI/180)*(5*((lastx*2)-1))}
+  if (onground==0) {dir=rota+(framecount*Math.PI/180)*(-15*((lastx*2)-1))}
   
   // Centering Sonics Position
   var transx = gx(playerx-((playersize*yh)/2)*Math.sin(dir));
