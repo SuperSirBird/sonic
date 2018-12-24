@@ -97,7 +97,7 @@ function sonicsprite() {
   dir = rota
   
   // Centering Sonics Position
-  var transx = gx(playerx-((playersize*ph)/2)*Math.sin(dir));
+  var transx = gx(playerx-((playersize*2.6)/2)*Math.sin(dir));
   var transy = gy(playery-((playersize*ph)/2)*Math.cos(dir));
   
   transx -= ((playersize*2.6)/2)*Math.sin(dir+(270*Math.PI/180));
