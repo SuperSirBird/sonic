@@ -84,6 +84,12 @@ function sonicsprite() {
     img = document.getElementById("sonicwalk2");
   }
   
+  // Jumping?
+  
+  if (onground==0) {
+    img = document.getElementById("sonicjump");
+  }
+  
   dir = rota
   
   // Centering Sonics Position
