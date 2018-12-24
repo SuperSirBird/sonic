@@ -94,16 +94,16 @@ function sonicsprite() {
   
   // Centering Sonics Position
   var transx = gx(playerx-((playersize*2.6)/2)*Math.sin(dir));
-  var transy = gy(playery-((playersize*2.6)/2)*Math.cos(dir));
+  var transy = gy(playery-((playersize*3.6)/2)*Math.cos(dir));
   
   transx -= ((playersize*2.6)/2)*Math.sin(dir+(270*Math.PI/180));
-  transy -= ((playersize*2.6)/2)*Math.cos(dir+(90*Math.PI/180));
+  transy -= ((playersize*3.6)/2)*Math.cos(dir+(90*Math.PI/180));
   ctx.translate(transx,transy);
   
   // Find Rotation
   ctx.rotate(dir+(180*Math.PI/180));
   
-  ctx.drawImage(img, 0, 0,playersize*2.6,playersize*2.6);
+  ctx.drawImage(img, 0, 0,playersize*2.6,playersize*3.6);
   ctx.restore();
   
 }
