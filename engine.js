@@ -117,6 +117,7 @@ function linepoint(x1_,y1_,x2_,y2_,x_,y_) {
 
 function getclose() {
   var oldl = closeline;
+  if (onground==1) {
   var smallestdis = 99999999;
   var smallestitem = 1;
   for (i=0;i<linex1.length;i++) {
@@ -127,6 +128,7 @@ function getclose() {
     }
   }
   closeline=smallestitem;
+  }
   
   // If angle to sharp, revert
   
