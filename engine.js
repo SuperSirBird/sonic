@@ -176,8 +176,8 @@ function player() {
     camoffx = camoffx+((100-camoffx)/10);
   }
   if (keys[37]) {
-    playerx+=speed*Math.sin((-90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-10
-    playery+=speed*Math.cos((-90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-10
+    playerx+=Math.sin((-90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-10
+    playery+=Math.cos((-90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-10
     lastx=1;
     camoffx = camoffx+((-100-camoffx)/10)
   }
