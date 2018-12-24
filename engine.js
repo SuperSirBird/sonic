@@ -162,7 +162,7 @@ function player() {
   
   accelerate+=1;
   var jumpframe = false;
-  if (keys[32] && onground==1 && framecount-lastjump>70) {
+  if (keys[32] && onground==1 && framecount-lastjump>50) {
     lastjump = framecount;
     accelerate = -18;
     jumpframe = true;
