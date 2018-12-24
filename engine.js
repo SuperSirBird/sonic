@@ -56,9 +56,9 @@ window.onkeydown = function(e) { keys[e.keyCode] = true; }
 
 // Map
 var linex1 = [-300,300,300];
-var liney1 = [-300,-300,300];
-var linex2 = [300,300,500];
-var liney2 = [-300,300,500];
+var liney1 = [-300,-300,500];
+var linex2 = [300,500,500];
+var liney2 = [-300,300,-100];
 
 function dist(x_,y_) {
   // Pythagorean Theorem
