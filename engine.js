@@ -91,7 +91,7 @@ function sonicsprite() {
   if (onground==0) {
     img = document.getElementById("sonicjump");
     yh=3.5;
-    ph = 2.6;
+    ph = 3;
   }
   
   dir = rota
