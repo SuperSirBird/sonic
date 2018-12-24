@@ -84,17 +84,17 @@ function sonicsprite() {
   }
   
   // Centering Sonics Position
-  var transx = gx(playerx-((playersize*2.5)/2)*Math.sin(rota));
-  var transy = gy(playery-((playersize*2.5)/2)*Math.cos(rota));
+  var transx = gx(playerx-((playersize*2.6)/2)*Math.sin(rota));
+  var transy = gy(playery-((playersize*2.6)/2)*Math.cos(rota));
   
-  transx -= ((playersize*2.5)/2)*Math.sin(rota+(270*Math.PI/180));
-  transy -= ((playersize*2.5)/2)*Math.cos(rota+(90*Math.PI/180));
+  transx -= ((playersize*2.6)/2)*Math.sin(rota+(270*Math.PI/180));
+  transy -= ((playersize*2.6)/2)*Math.cos(rota+(90*Math.PI/180));
   ctx.translate(transx,transy);
   
   // Find Rotation
   ctx.rotate(rota+(180*Math.PI/180));
   
-  ctx.drawImage(img, 0, 0,playersize*2.5,playersize*2.5);
+  ctx.drawImage(img, 0, 0,playersize*2.6,playersize*2.6);
   ctx.restore();
 }
 
@@ -154,14 +154,14 @@ function player() {
   }
   onground=1;
   // Check for obj's loop
-  if (dist(x-playerx,y-playery)>(playersize+linesize+7) || jumpframe) {
+  if (dist(x-playerx,y-playery)>(playersize+linesize+10) || jumpframe) {
     if (accelerate>20) {accelerate=20}
     playerx+=accelerate*Math.sin(Math.atan2(x-playerx,y-playery))
     playery+=accelerate*Math.cos(Math.atan2(x-playerx,y-playery))
     onground=0;
   }
   linepoint(linex1[closeline],liney1[closeline],linex2[closeline],liney2[closeline],playerx,playery);
-  if (dist(x-playerx,y-playery)<(playersize+linesize+7) && !(jumpframe)) {
+  if (dist(x-playerx,y-playery)<(playersize+linesize+10) && !(jumpframe)) {
     accelerate=0;
     playerx+=Math.sin(Math.atan2(x-playerx,y-playery))*(-((playersize+linesize+10)-dist(x-playerx,y-playery)))
     playery+=Math.cos(Math.atan2(x-playerx,y-playery))*(-((playersize+linesize+10)-dist(x-playerx,y-playery)))
