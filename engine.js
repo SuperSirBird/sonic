@@ -42,6 +42,7 @@ var onground;
 var closeline = 0;
 var rota;
 var lastx = 0;
+var speed=0;
 
 var olx;
 var oly;
@@ -173,13 +174,18 @@ function player() {
     playery+=Math.cos((90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
     lastx=0;
     camoffx = camoffx+((100-camoffx)/10)
+    
+    speed+=0.05;
   }
   if (keys[37]) {
-    playerx+=Math.sin((-90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
-    playery+=Math.cos((-90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
+    playerx+=speed*Math.sin((-90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
+    playery+=speed*Math.cos((-90*(Math.PI/180))+Math.atan2(x-playerx,y-playery))*-6
     lastx=1;
     camoffx = camoffx+((-100-camoffx)/10)
+    
+    speed+=0.05;
   }
+  if (!(keys[37] || keys[39])) {speed=0;}
   
   rota = Math.atan2(x-playerx,y-playery);
 
