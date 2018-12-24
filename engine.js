@@ -140,7 +140,7 @@ function getclose() {
   }
   if (Math.abs((rota*180/Math.PI)-(rota2*180/Math.PI)) == 180) {diff = 180}
   
-  ctx.fillText(Math.abs(diff) + " rota1: " + rota + "rota2: " + rota2, 250, 50);
+  ctx.fillText(Math.abs(diff) + " rota1: " + rota*180/Math.PI + " rota2: " + rota2*180/Math.PI, 250, 50);
   
   if (Math.abs(diff) > 60) {
     closeline = oldl;
