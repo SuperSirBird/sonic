@@ -91,7 +91,7 @@ function sonicsprite() {
   if (onground==0) {
     img = document.getElementById("sonicjump");
     yh=3.5;
-    ph = 4.6;
+    ph = 4.2;
   }
   
   dir = rota
@@ -100,7 +100,7 @@ function sonicsprite() {
   var transx = gx(playerx-((playersize*ph)/2)*Math.sin(dir));
   var transy = gy(playery-((playersize*ph)/2)*Math.cos(dir));
   
-  transx -= ((playersize*ph)/2)*Math.sin(dir+(270*Math.PI/180));
+  transx -= ((playersize*2.6)/2)*Math.sin(dir+(270*Math.PI/180));
   transy -= ((playersize*ph)/2)*Math.cos(dir+(90*Math.PI/180));
   ctx.translate(transx,transy);
   
