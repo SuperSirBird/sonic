@@ -78,7 +78,7 @@ function sonicsprite() {
   
   // Walking left/Right
   var img;
-  var yh = 2.5;
+  var yh = 2.6;
   if (lastx==0) {
     img = document.getElementById("sonicwalk");
   } else {
