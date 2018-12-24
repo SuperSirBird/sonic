@@ -87,7 +87,7 @@ function sonicsprite() {
   
   if (Math.abs(rota-oldir) < 180) {
     dir=oldir + (rota-oldir)/2;
-  } else {dir=oldir + (180-rota-oldir)/2;}
+  } else {dir=oldir + ((180-rota-oldir) % 360)/2;}
   
   dir = oldir + (rota-oldir)/2;
   
