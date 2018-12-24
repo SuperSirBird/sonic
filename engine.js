@@ -149,7 +149,7 @@ function player() {
   accelerate+=1;
   var jumpframe = false;
   if (keys[32] && onground==1) {
-    accelerate = -20;
+    accelerate = -18;
     jumpframe = true;
   }
   onground=1;
