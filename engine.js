@@ -126,6 +126,7 @@ function getclose() {
       smallestitem=i;
     }
   }
+  closeline=smallestitem;
   
   // If switch reset velocity
   if (closeline != oldl) {accelerate=0}
