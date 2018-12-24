@@ -144,12 +144,9 @@ function getclose() {
   
   if (Math.abs(diff) > 60) {
     closeline = oldl;
-    
-    if (onground==1) {
-      playerx = olx;
-      playery = oly;
-      accelerate = olv;
-    }
+    playerx = olx;
+    playery = oly;
+    accelerate = olv;
     
   }
   
