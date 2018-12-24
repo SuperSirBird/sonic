@@ -77,9 +77,8 @@ function sonicsprite() {
   ctx.save();
   
   // Walking left/Right
-  var img;
   var yh = 2.6;
-  var ph = 2.6;
+  var img;
   if (lastx==0) {
     img = document.getElementById("sonicwalk");
   } else {
@@ -90,24 +89,23 @@ function sonicsprite() {
   
   if (onground==0) {
     img = document.getElementById("sonicjump");
-    yh=2.6;
-    ph = 2.6;
+    yh = 2;
   }
   
   dir = rota
   
   // Centering Sonics Position
-  var transx = gx(playerx-((playersize*ph)/2)*Math.sin(dir));
-  var transy = gy(playery-((playersize*ph)/2)*Math.cos(dir));
+  var transx = gx(playerx-((playersize*yh)/2)*Math.sin(dir));
+  var transy = gy(playery-((playersize*yh)/2)*Math.cos(dir));
   
-  transx -= ((playersize*ph)/2)*Math.sin(dir+(270*Math.PI/180));
-  transy -= ((playersize*ph)/2)*Math.cos(dir+(90*Math.PI/180));
+  transx -= ((playersize*yh)/2)*Math.sin(dir+(270*Math.PI/180));
+  transy -= ((playersize*yh)/2)*Math.cos(dir+(90*Math.PI/180));
   ctx.translate(transx,transy);
   
   // Find Rotation
   ctx.rotate(dir+(180*Math.PI/180));
   
-  ctx.drawImage(img, 0, 0,playersize*2.6,playersize*yh);
+  ctx.drawImage(img, 0, 0,playersize*yh,playersize*yh);
   ctx.restore();
   
 }
