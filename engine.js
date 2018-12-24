@@ -85,6 +85,10 @@ function sonicsprite() {
     img = document.getElementById("sonicwalk2");
   }
   
+  if (Math.abs(rota-oldir) < 180) {
+    dir=oldir + (rota-oldir)/2;
+  } else {dir=oldir + (180-rota-oldir)/2;}
+  
   dir = oldir + (rota-oldir)/2;
   
   // Centering Sonics Position
