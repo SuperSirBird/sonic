@@ -2,6 +2,8 @@
 
 A Javascript Sonic Physics Engine
 
+*This physics engine was specifically designed for the chaos of the game*
+
 @author: SuperSirBird (Github)
 @description: A sonic js physics engine
 @date: 22/12/2018 AUS
