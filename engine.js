@@ -48,6 +48,8 @@ var dir;
 var olx;
 var oly;
 var olv;
+var framecount = 0;
+var lastjump = 0;
 
 // Keys detector
 var keys = {};
@@ -160,7 +162,8 @@ function player() {
   
   accelerate+=1;
   var jumpframe = false;
-  if (keys[32] && onground==1) {
+  if (keys[32] && onground==1 && framecount-lastjump>10) {
+    lastjump = framecount;
     accelerate = -18;
     jumpframe = true;
   }
@@ -223,6 +226,7 @@ function step() {
   getclose();
   draw();
   drawlogo();
+  framecount += 1;
   window.requestAnimationFrame(step);
 }
 window.requestAnimationFrame(step);
