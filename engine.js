@@ -154,14 +154,14 @@ function player() {
   }
   onground=1;
   // Check for obj's loop
-  if (dist(x-playerx,y-playery)>(playersize+linesize+10) || jumpframe) {
+  if (dist(x-playerx,y-playery)>(playersize+linesize+7) || jumpframe) {
     if (accelerate>20) {accelerate=20}
     playerx+=accelerate*Math.sin(Math.atan2(x-playerx,y-playery))
     playery+=accelerate*Math.cos(Math.atan2(x-playerx,y-playery))
     onground=0;
   }
   linepoint(linex1[closeline],liney1[closeline],linex2[closeline],liney2[closeline],playerx,playery);
-  if (dist(x-playerx,y-playery)<(playersize+linesize+10) && !(jumpframe)) {
+  if (dist(x-playerx,y-playery)<(playersize+linesize+7) && !(jumpframe)) {
     accelerate=0;
     playerx+=Math.sin(Math.atan2(x-playerx,y-playery))*(-((playersize+linesize+10)-dist(x-playerx,y-playery)))
     playery+=Math.cos(Math.atan2(x-playerx,y-playery))*(-((playersize+linesize+10)-dist(x-playerx,y-playery)))
