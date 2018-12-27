@@ -220,6 +220,11 @@ function draw() {
   }
 }
 
+function dialog() {
+  ctx.font = "30px VT323";
+  ctx.fillText("Sonic, whats happening?!?", c.innerWidth/2, c.innerHeight/2);
+}
+
 function step() {
   // Program Main Loop
   ctx.clearRect(0, 0, c.width, c.height);
