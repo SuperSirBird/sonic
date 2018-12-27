@@ -218,12 +218,6 @@ function draw() {
     ctx.lineTo(gx(linex2[i]),gy(liney2[i]));
     ctx.stroke();
   }
-  dialog();
-}
-
-function dialog() {
-  ctx.font = "30px VT323";
-  ctx.fillText("Sonic, whats happening?!?", c.innerWidth/2, c.innerHeight/2);
 }
 
 function step() {
