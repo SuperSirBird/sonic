@@ -218,6 +218,7 @@ function draw() {
     ctx.lineTo(gx(linex2[i]),gy(liney2[i]));
     ctx.stroke();
   }
+  dialog();
 }
 
 function dialog() {
