@@ -210,7 +210,7 @@ function player() {
 }
 
 function background() {
-  img = document.getElementById("background");
+  var img = document.getElementById("background1");
   ctx.drawImage(img, 0, 0,c.innerWidth,c.innerHeight);
 }
 
