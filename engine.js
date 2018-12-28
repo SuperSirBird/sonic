@@ -211,7 +211,8 @@ function player() {
 
 function drawbackground() {
   var img = document.getElementById("background1");
-  ctx.drawImage(img, 0, 0,c.width,c.height);
+  ctx.drawImage(img, 0, 0,c.width/2,c.height/2);
+  ctx.drawImage(img, c.width/2, c.height/2,c.width/2,c.height/2);
 }
 
 function draw() {
