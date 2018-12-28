@@ -209,7 +209,13 @@ function player() {
   sonicsprite();
 }
 
+function background() {
+  img = document.getElementById("background");
+  ctx.drawImage(img, 0, 0,c.innerWidth,c.innerHeight);
+}
+
 function draw() {
+  background();
   ctx.lineCap = "round";
   ctx.lineWidth = linesize*2;
   for (i=0;i<linex1.length;i++) {
