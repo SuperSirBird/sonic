@@ -210,7 +210,7 @@ function player() {
 }
 
 function drawbackground() {
-  var xoff = (0-playerx)-camoffx
+  var xoff = (0-playerx)-camoffx/5
   var img = document.getElementById("background1");
   ctx.drawImage(img, xoff, 0,c.width/2,c.height);
   ctx.drawImage(img, c.width/2+xoff, 0,c.width/2,c.height); 
