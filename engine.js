@@ -215,7 +215,6 @@ function drawbackground() {
 }
 
 function draw() {
-  drawbackground();
   ctx.lineCap = "round";
   ctx.lineWidth = linesize*2;
   for (i=0;i<linex1.length;i++) {
@@ -229,6 +228,7 @@ function draw() {
 function step() {
   // Program Main Loop
   ctx.clearRect(0, 0, c.width, c.height);
+  drawbackground();
   player();
   getclose();
   draw();
